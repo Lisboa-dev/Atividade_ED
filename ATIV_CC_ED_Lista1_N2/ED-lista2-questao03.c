@@ -1,22 +1,10 @@
 /*    
-**   Função : 
-**   Autor : 
-**   Data  : 
-**   Observações:  
+**   Função : empresa aerea
+**   Autor : Matheus Lira Lisboa
+**   Data  : 12/06/2025
+**   Observações:  não fiz tratamento de dados pq C da muito trabalho
 */
- /*Suponha que uma empresa aérea mantém um cadastro de aeroportos como um vetor de
-ponteiros para estruturas que contêm as seguintes informações:
-a. Sigla: string com até 3 caracteres;
-b.Cidade: string com até 50 caracteres;
-c.Pais: string com até 30caracteres;
-d.Taxa: um valor real;
-e.Capacidade: um valor inteiro;
-Defina uma estrutura em C com o nome de aeroporto, que tenha os campos apropriados
-para guardar todas as informações descritas anteriormente. Defina também um novo tipo
-de dados com o nome de Aeroporto, correspondendo a essa estrutura. Defina um vetor de
-Aeroportos (usando alocação dinâmica para a quantidade de aeroportos) para armazenar
-todos os aeroportos que a empresa aérea trabalha. Implementar rotinas para ler, escrever e
-excluir registros deste tipo.*/
+ 
 
 #include <stdio.h>
 
@@ -110,22 +98,32 @@ void excluirAeroporto(AeroportosList lista, const char* sigla) {
     printf("Sigla '%s' não encontrada.\n", sigla);
 }
 
-void liberarAeroportos(AeroportosList lista, int quantidade) {
-    for (int i = 0; i < quantidade; i++) {
+void liberarAeroportos(AeroportosList lista) {
+    for (int i = 0; i < lista.quantidade; i++) {
         free(lista.cadastro[i]);
     }
     free(lista);
 }
 
-aeroporto buscarAeroporto(AeroportosList lista, char* texto){
+int buscarAeroporto(AeroportosList lista, char* texto){
     for (int i=0; i<lista.quantidade; i++){
         if(texto==lista.cadastro[i].sigla){
         printf("Aeroporto com sigla %s encontraddo\n A seguir mais informações:", texto);
         printf("cidade: %s\n, pais: %s\n, taxa: %f\n, capacidade%d\n", lista.cadastro[i].cidade,lista.cadastro[i].pais,lista.cadastro[i].taxa,lista.cadastro[i].capacidade);
-        return(lista.cadastro[i]);
+        return(i);
     
     }
     }
+    return(0);
 
     printf("aeroporto não encontrado");
+}
+
+aeroporto alterarAeroporto(AeroportosList lista, char* texto){
+    int posicao= buscarAeroporto(lista,texto);
+    aeroporto novo;
+    preencherAeroporto( novo);
+
+    lista.cadastro[posicao]=novo;
+
 }

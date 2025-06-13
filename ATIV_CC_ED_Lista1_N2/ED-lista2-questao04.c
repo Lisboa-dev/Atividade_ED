@@ -1,14 +1,9 @@
 /*    
-**   Função : 
-**   Autor : 
-**   Data  : 
+**   Função :  Conjectura de Goldbach  entre 700 e 1100
+**   Autor : Matheus Lira Lisboa
+**   Data  : 12/06/2025
 **   Observações:  
 */
-/*A famosa Conjectura de Goldbach diz que todo inteiro par maior que 2 é a soma de dois
-outros números primos. Testes extensivos foram feitos sem, contudo, ser encontrado um
-contra-exemplo. Escreva um programa que mostre que a afirmação é verdadeira para
-todo número par entre 700 e 1100. O programa deve imprimir cada número e os primos
-correspondentes.*/
 
 #include <stdio.h>
 #include <stdbool.h>

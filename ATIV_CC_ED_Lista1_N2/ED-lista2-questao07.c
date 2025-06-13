@@ -1,31 +1,5 @@
 /*    
-**   Função :  Implemente uma função que classifica os elementos de um vetor em ordem crescente
- usando o algoritmo “quicksort”, que pode ser estabelecido da forma a seguir:
- 1. Seja 
-m o elemento do vetor que ocupa a posição “central” no vetor;
- 2. Seja 
-i o índice do primeiro e 
-j o índice do último elemento do vetor;
- 3. Enquanto 
-i for menor ou igual a 
-O valor de 
-j , faça com que:
- i aumente até encontrar um elemento maior do que 
-O valor de 
-j diminua até encontrar um elemento menor que 
-m ;
- Haja troca entre os elementos que ocupam as posições 
-i e j;
- m ;
- 4. Ao final desses passos a situação do vetor será a seguinte: à esquerda da posição
- central, existem somente elementos menores que 
-m e à direita da posição central,
- existem somente elementos maiores que 
-m .
- Assim, o problema de ordenar o vetor se reduz a um problema de ordenar cada uma
- dessas “metades”. Para ordenar, então, basta aplicar os mesmos passos a cada uma das
- “metades” RECURSIVAMENTE.
- 5. Teste a função com valores gerados aleatoriamente
+**   Função :  Implemente uma função que classifica os elementos de um vetor em ordem crescente usando o algoritmo “quicksort”
 **   Autor : Matheus Lira Lisboa
 **   Data  : 10/06/2025
 **   Observações:  

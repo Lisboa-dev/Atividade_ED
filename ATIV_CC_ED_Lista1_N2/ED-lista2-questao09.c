@@ -1,13 +1,5 @@
 /*    
-**   Função :  Crie uma função para ordenar elementos de um vetor (pode ser de inteiros ou reais)
- usando o "método BubbleSort" (ordenação Bolha). Em seguida realize a CONTAGEM do
-números de 
-if's realizados e a quantidade de trocas realizadas. Mostre, ao final, após o
- vetor estar ordenado, a quantidade de 
-if's e de 
-trocas realizadas. Use a função em um
- programa que solicita a quantidade de elementos do vetor para o usuário e preenche este
- vetor com valores aleatórios
+**   Função :  Crie uma função para ordenar elementos de um vetor (pode ser de inteiros ou reais) usando o "método BubbleSort" 
 **   Autor : Matheus Lira Lisboa
 **   Data  : 10/06/2025
 **   Observações:  
