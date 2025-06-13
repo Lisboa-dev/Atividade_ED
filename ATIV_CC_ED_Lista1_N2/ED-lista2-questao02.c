@@ -1,7 +1,7 @@
 /*    
-**   Função : 
-**   Autor : 
-**   Data  : 
+**   Função : structs do empregado e empregados
+**   Autor : Matheus lira Lisboa
+**   Data  : 10/06/2025
 **   Observações:  
 */
 
@@ -10,6 +10,7 @@ nascimento, RG, data de admissão e salário)de um empregado de uma empresa. Cri
 novo tipo de dados chamado Empregado usando a estrutura empregado. Defina um vetor
 de empregados (usando alocação dinâmica) para armazenar todos os empregados de sua
 empresa. Implementar rotinas para ler, escrever e excluir registros deste tipo.*/
+#include <stdio.h>
 
 typedef struct {
     char RG[10];
@@ -21,7 +22,7 @@ typedef struct {
 } empregado;
 
 typedef struct{
-empregado** list;
+empregado* cadastro;
 int quantidade;
 }Empregados;
 
@@ -32,39 +33,43 @@ void CriarEmpregado(empregado Nome){
    for(int i=0; i<5; i++){
     switch (i){
       case 0:
-       scanf("",&Nome.RG);
+       printf("\n");
+       scanf("%10s",&Nome.RG);
        break;
       case 1:
-       scanf("",&Nome.nome);
+       printf("\n");
+       scanf("%50s",&Nome.nome);
        break;
       case 2:
-       scanf("",&Nome.nascimento);
+       printf("\n");
+       scanf("%11s",&Nome.nascimento);
        break;
       case 3:
-       scanf("",&Nome.admissao);
+       printf("\n");
+       scanf("%11s",&Nome.admissao);
        break;
       case 4:
-       scanf("",&Nome.salario);
+       printf("\n");
+       scanf("%2.f",&Nome.salario);
        break;
       default:
-       print("\n algum erro occorreu na criação do seu funcionario! tente novamente\n");
+       print("\n algum erro ocorreu na criação do seu funcionario! tente novamente\n");
     }
    }
 }
 
 void registrarEmpregado(empregado funcionario, Empregados list){
-     int posicao;
-    
-    if(sizeof(list)!=NULL){
-        posicao= sizeof(list)/sizeof(empregado)-1;
-        list->list = (* Empregados)realloc(sizeof(List)+sizeof(empregado));
-    }else{
-        posicao = 0
-         list->list= (* Empregados)malloc(sizeof(empregado));
-    }
-
-    list->list[posicao]=funcionario;
-
+     
+ if(list.cadastro==NULL){
+   list.cadastro=(empregado*) realloc((list.quantidade+1)*sizeof(empregado));
+   list.quantidade=list.quantidade+1;
+ }
+ else{
+     list.cadastro=(empregado*) malloc(sizeof(empregado));
+     list.quantidade=1;
+ }
+ int position=list.quantidade-1;
+ list.cadastro[position]= funcionario;
    
 }
 

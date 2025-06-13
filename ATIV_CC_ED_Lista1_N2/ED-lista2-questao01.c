@@ -1,26 +1,30 @@
 /*    
 **   Função : Implemente uma função que classifica os elementos de um vetor em ordem crescente usando o seguinte algoritmo (conhecido como “classificação por seleção”):
-**   Autor : 
-**   Data  : 
+**   Autor : Matheus Lira Lisboa
+**   Data  : 07/06/2025
 **   Observações:  
 */
 
 #include <stdio.h>
 
-// Função para ordenar um vetor usando o algoritmo de seleção
-void selectionSort(int vetor[], int tamanho) {
+void selectionSort(int vetor[]);
+
+void selectionSort(int vetor[]) {
+ int tamanho = sizeof(vetor)/sizeof(int);
+
     for (int i = 0; i < tamanho - 1; i++) {
-        int indice_menor = i;
+        int indiceMenor = i;
         for (int j = i + 1; j < tamanho; j++) {
-            if (vetor[j] < vetor[indice_menor]) {
-                indice_menor = j;
+            if (vetor[j] < vetor[indiceMenor]) {
+                indiceMenor = j;
             }
         }
-        // Troca os elementos
-        if (indice_menor != i) {
-            int temp = vetor[i];
-            vetor[i] = vetor[indice_menor];
-            vetor[indice_menor] = temp;
+     
+        if (indiceMenor != i) {
+            int guardar = vetor[i];
+            vetor[i] = vetor[indiceMenor];
+            vetor[indiceMenor] = guardar;
         }
     }
 }
+ 

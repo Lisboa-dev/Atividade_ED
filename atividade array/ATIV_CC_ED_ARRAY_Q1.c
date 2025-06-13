@@ -9,6 +9,7 @@
 
 void displayNumber(void);
 
+
 void displayNumber(void){
     int array [10];
     int number;

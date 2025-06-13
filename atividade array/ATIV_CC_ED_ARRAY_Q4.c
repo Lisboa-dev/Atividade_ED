@@ -12,7 +12,7 @@ int * orderArray (int* array);
 void print_50Odd (int* array);
 
 
-
+// cria umm array de primos
 int * randomOdd (){
     srand(time(NULL));
     
@@ -44,6 +44,7 @@ int * randomOdd (){
   
 }
 
+//ordena
 int * orderArray (int * array){
    for(int j=0; j<50; j++){
        for (int i=0; i<50; i++){
@@ -59,9 +60,13 @@ int * orderArray (int * array){
     
 }
 }
+
+//exibe
 void print_50Odd (int* array){
    for (int i=0; i<50; i++){
        printf("%d",array[i]);
    }
+
+   free(array);
 }
 

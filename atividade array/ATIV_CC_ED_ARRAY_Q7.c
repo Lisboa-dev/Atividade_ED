@@ -6,57 +6,59 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-
-/*Preencher um array de 100 elementos com elementos aleatórios (inteiros)
- e calcular e exibir, a média, o maior, o menor e quantos (e quais são) os menores que a média*/
-
- #include "ATIV_CC_ED_ARRAY_Q2.c"
- #include "ATIV_CC_ED_ARRAY_Q3.c"
- #include "ATIV_CC_ED_ARRAY_Q4.c"
+#include "../orderArray.c"
+ 
+int * randomNumberArray (int n);
+float calcularMedia(int * array);
+void classificateArray();
 
 
 
-
+//criar array
 int * randomNumberArray (int n){
     srand(time(NULL));
-    int loop, equal, true=1, false=0, increment=0,array[100];
+    int array[100];
+
+    printf("array[");
 
    for(int i=0; i<100; i++){
      int number = 0;
      number =rand()%n;
-     array[increment]=number;
-   
+     array[i]=number;
+     printf(" %d,", number);
     }
-   
+    printf("] \n");
    return(array);
+
+
 }
+float calcularMedia(int * array){
+float media;
+int tamanho= sizeof(array)/sizeof(int);
 
-int orderArray (int * array){
-   for(int j=0; j<50; j++){
-       for (int i=0; i<50; i++){
-
-       if( array[j] > array[i]){
-          int a=array[j], b=array[i];
-
-          array[i]=a;
-          array[j]=b;
-       }
-     
+   for (int i=0; i<tamanho; i++){
+      media += array[i]/tamanho;
     }
-}
 
-
+ return media;
 }
 
 
 void classificateArray(){
 int array [100]=ramdomNumberArray(1000);
-orderArray(array);
+quickSort(array);
+float media=calcularMedia(array);
 
-printf("%f, %d, %d, %d",media, array[99], array[0], qtMenores);
+int contagem;
 
-for(int i=0; i< sizeof(arrayMenores)/sizeof(int); i++ ){
-printf("%d", arrayMenores[0]);
+for(int i=0; i< sizeof(array)/sizeof(int); i++ ){
+   if(array[i]<media){
+       printf("o valor %d na posição %d é menor que a média \n", array[0], i);
+       contagem++;
+}}
+
+printf("\n");
+printf(" a media é %f\n o maior valor é %d\n o menor valor é %d\n aquantidade de menores que a media é %d",media, array[99], array[0], contagem);
+
+free(array);
 }
-}
- a média, o maior, o menor e quantos (e quais são) os menores que a média*/
